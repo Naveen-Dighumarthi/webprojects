@@ -1,0 +1,138 @@
+<html>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Website</title>
+    <style>
+        *{
+    padding:0px;
+    margin:0px;
+}
+body{
+    background-color:pink;
+    display:block;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#fahrenhit
+{
+    margin-top:100px;
+    border:1px solid rgba(27,31,35,1.5);
+    border-radius:6px;
+    justify-content: center;
+    text-align:center;
+    box-sizing:border-box;
+    color:black;
+    display:inline-block;
+    position:relative;
+    padding:5px;
+    font-size:20px;
+    font-weight: bold;
+   
+    line-height:30px;
+    
+}
+#fahrenhit:hover{
+    background-color:violet;
+    color: black;
+
+}
+
+#celisus
+{
+    
+        margin-top:100px;
+        border:1px solid rgba(27,31,35,1.5);
+        border-radius:6px;
+        justify-content: center;
+        text-align:center;
+        box-sizing:border-box;
+        color:black;
+        display:inline-block;
+        position:relative;
+        padding:5px;
+        font-size:20px;
+        font-weight: bold;
+       
+        line-height:30px;
+        
+    }
+
+#celisus:hover{
+    background-color:antiquewhite;
+    z-index:-1;
+}
+#convert
+{
+    margin-top:10px;
+    border:1px solid rgba(27,31,35,1.5);
+    border-radius:6px;
+    box-sizing:border-box;
+    color:white;
+    display:inline-block;
+    postion:relative;
+    font-wight:600;
+    line-height:30px;
+}
+#convert:hover{
+    background-color:red ;
+    z-index:-1;
+}
+#clear:hover{
+    background-color:yellow;
+    z-index:-1;
+}
+
+    </style>
+</head>
+<body>
+    <script>
+        
+
+document.getElementById('convert').onclick=tempconvert;
+
+document.getElementById('clear').onclick=clearForm;
+function tempconvert(){
+    var f=document.getElementById("fahrenhit").value;
+    var c=document.getElementById("celisus").value;
+
+    if(c!="")
+    {
+        f=(parseFloat(c)-32)/1.8;
+    }
+    else 
+    {
+        c=(parseFloat(f)*1.8)+32;
+    }
+
+
+document.getElementById("fahrenhit").value=parseFloat(f).toFixed(2);
+document.getElementById("celisus").value=parseFloat(c).toFixed(2);
+}
+
+function clearForm()
+{
+    document.getElementById('fahrenhit').value="";
+    document.getElementById('celisus').value="";
+
+}
+
+
+    </script>
+    <center>
+        <h2 style:"color:red">Temparature Converter</h2>
+    <input type="text" placeholder="fahrenhit" name="f" value="" id="fahrenhit">
+    <input type="text" placeholder="celusis" name="c" value="" id="celisus">
+    <button id="convert">covert!</button>
+    <button id="clear">Reset</button>
+    <script src="temp.js"></script>
+    </center>
+    
+</div>
+   
+</body>
